@@ -28,4 +28,19 @@ sso:
     post_setup_script: "script/bundle_install"
     rake_env:
       RAILS_ENV: staging
-      RACK_ENV: staging      
+      RACK_ENV: staging
+  production:
+    domain:
+      - name: "devel@sso.optimispt.com"
+    deploy_to: "/var/www/sso"
+    repository: "git@github.com:optimis/rubycas-server.git"
+    branch: "optimis"
+    config_repository: "git@github.com:optimis/production-wd-config.git"
+    config_branch: "master"
+    config_target: production
+    deploy_config_to: "/var/www/sso_config"
+    post_deploy_script: "script/bundle_install"
+    post_setup_script: "script/bundle_install"
+    rake_env:
+      RAILS_ENV: production
+      RACK_ENV: production      
