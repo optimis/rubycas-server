@@ -16,7 +16,7 @@ sso:
       RACK_ENV: rc
   staging:
     domain:
-      - name: "devel@sso-staging.optimispt.com"
+      - name: "devel@192.168.110.195"
     deploy_to: "/var/www/sso"
     repository: "git@github.com:optimis/rubycas-server.git"
     branch: "optimis"
