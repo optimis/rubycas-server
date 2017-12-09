@@ -18,9 +18,11 @@ notice:
   please_wait: "Please wait..."
 
 label:
+  email: "Email"
   username: "Username"
   password: "Password"
   central_login_title: "Central Login"
+  reset_password: "Reset Password"
 
 button:
   login: "LOGIN"
