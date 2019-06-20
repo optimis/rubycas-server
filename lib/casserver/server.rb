@@ -293,6 +293,7 @@ module CASServer
       @service = clean_service_url(params['service'])
       @renew = params['renew']
       @gateway = params['gateway'] == 'true' || params['gateway'] == '1'
+      @username = request.cookies['optimis_username']
 
       if tgc = request.cookies['tgt']
         tgt, tgt_error = validate_ticket_granting_ticket(tgc)
@@ -429,6 +430,10 @@ module CASServer
             :service => @service,
             :request => @env
           )
+          if params[:remember_me]
+            response.set_cookie('optimis_username', value: @username)
+          end
+
           if credentials_are_valid
             @authenticated = true
             @authenticated_username = @username
